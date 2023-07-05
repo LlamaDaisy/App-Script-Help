@@ -1,0 +1,17 @@
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    color: blue;
+  }
+
+  .links {
+    display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+  }
+
+  .links input[type="text"] {
+    height: 150px; /* Set the desired height */
+    width:auto; /* Set the desired width */
+  }
