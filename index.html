@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Team Jetpack Sign Up</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js"></script>
+</head>
+
+<body>
+  
+    <div class="form-group">
+      <label>Hey! Thank you for your interest in joining Team Jetpack! Can we first take your name? This can be your creator name or real name, however you prefer to be addressed.</label>
+      <input type="text" id="name" name="Hey! Thank you for your interest in joining Team Jetpack! Can we first take your name?" placeholder="Test" required oninput="updateGreeting()">
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Hi <span id="greeting"></span>, nice to meet you! What is the best way to contact you?</label>
+      <select name="Nice to meet you! What is the best way to contact you?" id="options" required>
+        <p>
+          <option value="select" selected disabled>Select</option>
+          <option value="Email">Email</option>
+          <option value="Discord">Discord</option>
+          <option value="Twitter">Twitter</option>
+          <option value="Other">Other</option>
+        </p>
+      </select>
+    </div>
+    <br>
+    <div class="form-group">
+      <label>Please enter your contact information. For Discord please include the numbers after your username. 
+
+          For twitter please make sure you are following us @JetpackCLTV so we can DM you.</label>
+      <input type="text" name="Please enter your contact information." id="" placeholder="Test" required>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <label>Where in the world are you located? <p>You don't need to give us specifics just the country is fine :) 
+            If you are based in the USA can you please also provide your time zone.</p></label>
+      <input type="text" name="Where in the world are you located?" id="" required>
+    </div>
+    <br>
+    <div>
+      <label>Which of our games are you interested in?</label> <br>
+      <input type="checkbox" name="Which of our games are you interested in?" value="PHAGEBORN - PC">
+      <label for="PHAGEBORN - PC">PHAGEBORN - PC</label><br>
+      <input type="checkbox" name="Which of our games are you interested in?" value="Goblin Gladiators - PC">
+      <label for="Goblin Gladiators - PC">Goblin Gladiators - PC</label><br>
+      <input type="checkbox" name="Which of our games are you interested in?"value="Rare Pets - Mobile">
+      <label for="Rare Pets - Mobile">Rare Pets - Mobile</label>
+    </div>
+    <br>
+
+    <div>
+      <label>What kind of creator are you?</label><br>
+      <input type="checkbox" name="What kind of creator are you?" value="TikTok">
+      <label for="TikTok">TikTok</label><br>
+      <input type="checkbox" name="What kind of creator are you?" value="Twitch">
+      <label for="Twitch">Twitch</label><br>
+      <input type="checkbox" name="What kind of creator are you?" value="YouTube">
+      <label for="YouTube">YouTube</label><br>
+      <input type="checkbox" name="What kind of creator are you?" value="Other">
+      <label for="Other">Other</label><br>
+    </div>
+
+
+    <br>
+    <div class="links">
+      <label>Please provide links to your channels</label>
+      <input type="text" name="Please provide links to your channels." id="" required>
+    </div>
+
+    <br>
+
+    <div class="form-group">
+      <label>Any other social platforms? If you have any other social media or profiles you'd like us to look at please list them below!</label>
+      <input type="text" name="Any other social platforms?" id="" required>
+    </div>
+    <br>
+    <br>
+
+    <div>
+      Thank you so much for your interest in joining Team Jetpack, our Flight Commander Lara will be in touch soon!
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    const scriptURL = '<SCRIPT URL>'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
+</body>
+
+</html>
